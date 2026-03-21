@@ -8,12 +8,6 @@ yarn-error.log
 backend/node_modules/
 backend/.env
 
-# Frontend (React + Vite)
-frontend/node_modules/
-frontend/dist/
-frontend/.env.local
-frontend/.vite/
-
 # OS / IDE files
 .DS_Store
 Thumbs.db
