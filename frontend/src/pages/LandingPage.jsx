@@ -1,9 +1,9 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Home, CreditCard, Users, ArrowRight } from 'lucide-react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Home, CreditCard, Users, ArrowRight } from "lucide-react";
 
 export default function LandingPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
@@ -14,29 +14,29 @@ export default function LandingPage() {
             <div className="w-7 h-7 bg-navy-900 rounded-md flex items-center justify-center">
               <Home size={14} className="text-white" />
             </div>
-            <span className="font-display font-bold text-navy-900 text-lg">HostelHub</span>
+            <span className="font-display font-bold text-navy-900 text-lg">
+              HostelHub
+            </span>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
-            <a href="#" className="hover:text-navy-900 transition-colors">Home</a>
-            <a href="#" className="hover:text-navy-900 transition-colors">Rooms</a>
-            <a href="#" className="hover:text-navy-900 transition-colors">Students</a>
-          </div>
+
           <div className="flex items-center gap-3">
             <button
-              onClick={() => navigate('/student/dashboard')}
+              onClick={() => navigate("/signup")}
               className="px-4 py-2 text-sm font-medium text-navy-900 border border-navy-900 rounded-lg hover:bg-navy-900 hover:text-white transition-all"
             >
-              Sign In
+              Sign Up
             </button>
+            
             <button
-              onClick={() => navigate('/admin/dashboard')}
+              onClick={() => navigate("/login")}
               className="px-4 py-2 text-sm font-medium text-white bg-navy-900 rounded-lg hover:bg-navy-800 transition-all"
             >
-              Admin
+              Log In
             </button>
           </div>
         </div>
       </nav>
+
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-20 text-center">
@@ -47,20 +47,21 @@ export default function LandingPage() {
           Effortless Hostel Management, Built for Scale.
         </h1>
         <p className="text-gray-500 text-lg max-w-xl mx-auto mb-10">
-          The complete operating system for modern student housing. Manage occupancy, billing, and residents with total clarity.
+          The complete operating system for modern student housing. Manage
+          occupancy, billing, and residents with total clarity.
         </p>
         <div className="flex gap-4 justify-center">
           <button
-            onClick={() => navigate('/student/dashboard')}
+            onClick={() => navigate("/signup")}
             className="px-6 py-3 bg-brand text-white rounded-xl font-medium hover:bg-brand-dark transition-all shadow-md hover:shadow-lg"
           >
-            Student Portal
+            Create Account
           </button>
           <button
-            onClick={() => navigate('/admin/dashboard')}
+            onClick={() => navigate("/login")}
             className="px-6 py-3 text-navy-900 border border-gray-200 rounded-xl font-medium hover:border-navy-900 transition-all"
           >
-            Admin Portal
+            Log In
           </button>
         </div>
       </section>
@@ -73,15 +74,32 @@ export default function LandingPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Home, title: 'Room Allocation', desc: 'Centralized records for communication, documents, and history in one place.' },
-              { icon: CreditCard, title: 'Payments', desc: 'Centralized records for communication, documents, and history in one place.' },
-              { icon: Users, title: 'Student Profiles', desc: 'Centralized records for communication, documents, and history in one place.' },
+              {
+                icon: Home,
+                title: "Room Allocation",
+                desc: "Centralized records for communication, documents, and history in one place.",
+              },
+              {
+                icon: CreditCard,
+                title: "Payments",
+                desc: "Centralized records for communication, documents, and history in one place.",
+              },
+              {
+                icon: Users,
+                title: "Student Profiles",
+                desc: "Centralized records for communication, documents, and history in one place.",
+              },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
+              <div
+                key={title}
+                className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow"
+              >
                 <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
                   <Icon size={18} className="text-brand" />
                 </div>
-                <h3 className="font-display font-semibold text-navy-900 mb-2">{title}</h3>
+                <h3 className="font-display font-semibold text-navy-900 mb-2">
+                  {title}
+                </h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -96,10 +114,11 @@ export default function LandingPage() {
             Ready to streamline your operations?
           </h2>
           <p className="text-blue-200 mb-8">
-            Join leading hostels using HostelHub to deliver a superior student experience.
+            Join leading hostels using HostelHub to deliver a superior student
+            experience.
           </p>
           <button
-            onClick={() => navigate('/student/dashboard')}
+            onClick={() => navigate("/signup")}
             className="px-6 py-3 bg-brand text-white rounded-xl font-medium hover:bg-brand-dark transition-all inline-flex items-center gap-2"
           >
             Get Started Now <ArrowRight size={16} />
@@ -116,14 +135,22 @@ export default function LandingPage() {
             </div>
             <span>HostelHub</span>
           </div>
-          <p>© 2025 Architectural Concierge Hostel Systems. All rights reserved.</p>
+          <p>
+            © 2025 Architectural Concierge Hostel Systems. All rights reserved.
+          </p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-gray-600">Privacy</a>
-            <a href="#" className="hover:text-gray-600">Terms</a>
-            <a href="#" className="hover:text-gray-600">Support</a>
+            <a href="#" className="hover:text-gray-600">
+              Privacy
+            </a>
+            <a href="#" className="hover:text-gray-600">
+              Terms
+            </a>
+            <a href="#" className="hover:text-gray-600">
+              Support
+            </a>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
